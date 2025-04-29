@@ -2,11 +2,11 @@ Com base no código Java fornecido e na estrutura de diretórios que você compa
 
 ---
 
-# 🧠 Pratt Parser em Java
+# Pratt Parser em Java
 
 Este projeto implementa um **Pratt Parser** em Java, uma técnica de parsing eficiente para expressões matemáticas com suporte a precedência e associatividade de operadores. Inspirado pelo artigo [Simple but powerful Pratt parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html), este parser foi desenvolvido do zero utilizando uma arquitetura orientada a objetos com boas práticas de projeto.
 
-## 📂 Estrutura de Diretórios
+## Estrutura de Diretórios
 
 ```plaintext
 prat-parser/
@@ -107,11 +107,3 @@ O parser atual reconhece e avalia expressões com:
 ## 📖 Referência Técnica
 
 Este projeto foi fortemente inspirado no trabalho de [matklad](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html), e adapta a mesma ideia para o paradigma orientado a objetos com Java.
-
-## 🤝 Contribuindo
-
-Pull Requests, sugestões e testes adicionais são sempre bem-vindos. O parser está em desenvolvimento contínuo e seu feedback pode ajudar a evoluir o projeto.
-
----
-
-Se quiser, posso gerar também o `pom.xml` ideal para esse projeto Maven. Deseja isso?
