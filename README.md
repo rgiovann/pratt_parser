@@ -81,6 +81,37 @@ Os testes seguem o padrão **JUnit** e podem ser executados com:
 mvn test
 ```
 
+### Construção da AST
+
+Vamos utilizar uma expressão simples para ilustrar como o Pratt Parser constrói uma Árvore de Sintaxe Abstrata (AST). Consideremos a expressão:
+
+```
+1 + 2 * 3
+```
+
+No Pratt Parser, a análise leva em conta a precedência dos operadores. Sabemos que a multiplicação (`*`) tem precedência maior que a adição (`+`). Portanto, a expressão é interpretada como:
+
+```
+1 + (2 * 3)
+```
+
+
+A AST correspondente seria:
+
+```
+      [+]
+     /   \
+   [1]   [*]
+         / \
+       [2] [3]
+```
+
+- **`+`**: É o nó raiz da AST, representando a operação de adição.
+- **`1`**: É o operando esquerdo da adição.
+- **`*`**: É o operando direito da adição, representando a operação de multiplicação.
+- **`2` e `3`**: São os operandos da multiplicação.  ([Pratt Expression Parsing Exemplos | ParserObjects](https://whiteknight.github.io/ParserObjects/v3/prattexpr_example)
+
+O Pratt Parser constrói essa árvore respeitando as precedências dos operadores, garantindo que a multiplicação seja avaliada antes da adição.
 
 ## 🛠️ Funcionalidades Atuais
 
