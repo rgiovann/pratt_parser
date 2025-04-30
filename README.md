@@ -37,7 +37,6 @@ prat-parser/
             └── parser/
                 └── prat_parser/
                     ├── LexerTest.java
-                    ├── PrattParserTest_00.java
                     └── PrattParserTest.java
 ```
 
@@ -75,17 +74,17 @@ As classes dependem de abstrações, como `LexerState` e `Expression`, promovend
 
 ## 🧪 Testes
 
-O projeto conta com **três classes de teste** (em `src/test/java/parser/prat_parser`) que validam tanto a tokenização quanto a construção da AST:
+O projeto conta com **duas classes de teste** (em `src/test/java/parser/prat_parser`) que validam tanto a tokenização quanto a construção da AST:
 
 - `LexerTest.java` – Valida o funcionamento do analisador léxico.
-- `PrattParserTest.java` – Verifica parsing de expressões básicas e intermediárias.
-- `PrattParserTest_00.java` – Implementa casos de teste mais elaborados e compostos.
+- `PrattParserTest.java` – Verifica parsing de expressões básicas, intermediárias e avançadas. Os testes comparam diretamente a **estrutura da árvore sintática (AST)** utilizando objetos `Atom` e `Cons`, garantindo maior robustez e precisão do que comparações baseadas apenas em strings.
 
 Os testes seguem o padrão **JUnit** e podem ser executados com:
 
 ```bash
 mvn test
 ```
+
 
 ## 🛠️ Funcionalidades Atuais
 
