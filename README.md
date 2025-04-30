@@ -47,7 +47,7 @@ O núcleo do parser está na classe `PrattParser.java`, que analisa tokens com b
 
 ## ✅ Princípios SOLID Aplicados
 
-Este projeto segue rigorosamente os princípios SOLID:
+Este projeto seguiu sempre que possível os princípios SOLID:
 
 ### 🔹 SRP (Single Responsibility Principle)
 Cada classe possui responsabilidade única:
@@ -97,7 +97,6 @@ O parser atual reconhece e avalia expressões com:
 - [ ] Suporte a expressões com funções e chamadas encadeadas
 - [ ] Validação e tratamento de erros com mensagens mais descritivas
 - [ ] Suporte a parsing de expressões booleanas e lógicas
-- [ ] Suporte a variáveis e escopo no runtime (em fase de estudo)
 
 ## 📖 Referência Técnica
 
