@@ -4,19 +4,18 @@ import java.util.List;
 
 import parser.prat_parser.lexer.Lexer;
 import parser.prat_parser.model.Atom;
+import parser.prat_parser.model.BindingPower;
 import parser.prat_parser.model.Cons;
 import parser.prat_parser.model.Expression;
 import parser.prat_parser.model.Token;
 import parser.prat_parser.model.TokenType;
 
 public class PrattParser {
-    private final Lexer lexer;
     private int tokenIndex;
     private final List<Token> tokens;
 
     public PrattParser(Lexer lexer) {
-        this.tokens = lexer.tokenize(); // gera uma vez só
-        this.lexer = lexer;
+        this.tokens = lexer.tokenize(); 
         this.tokenIndex = 0;
     }
 
@@ -83,12 +82,12 @@ public class PrattParser {
             }
 
             // Infix operators
-            int[] infixBp = infixBindingPower(op);
-            if (infixBp == null) {
+            BindingPower bp = infixBindingPower(op);
+            if (bp == null) {
                 break;
             }
-            int lBp = infixBp[0];
-            int rBp = infixBp[1];
+            int lBp = bp.left();
+            int rBp = bp.right();
             if (lBp < minBp) {
                 break;
             }
@@ -117,25 +116,25 @@ public class PrattParser {
 
     private int prefixBindingPower(char op) {
         return switch (op) {
-            case '+', '-' -> 9;
-            default -> throw new IllegalArgumentException("Bad operator: " + op);
+            case '+', '-' -> BindingPower.PREFIX_PLUS_MINUS.right();
+            default -> throw new IllegalArgumentException("Bad prefix operator: " + op);
         };
     }
 
     private Integer postfixBindingPower(char op) {
         return switch (op) {
-            case '!', '[' -> 11;
+            case '!', '[' -> BindingPower.POSTFIX_EXCL_BRACKET.left();
             default -> null;
         };
     }
 
-    private int[] infixBindingPower(char op) {
+    private BindingPower infixBindingPower(char op) {
         return switch (op) {
-            case '=' -> new int[]{2, 1};
-            case '?' -> new int[]{4, 3};
-            case '+', '-' -> new int[]{5, 6};
-            case '*', '/' -> new int[]{7, 8};
-            case '.' -> new int[]{14, 13};
+            case '=' -> BindingPower.INFIX_ASSIGN;
+            case '?' -> BindingPower.INFIX_TERNARY;
+            case '+', '-' -> BindingPower.INFIX_ADD_SUB;
+            case '*', '/' -> BindingPower.INFIX_MUL_DIV;
+            case '.' -> BindingPower.INFIX_DOT;
             default -> null;
         };
     }
