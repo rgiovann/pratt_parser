@@ -3,14 +3,14 @@ package parser.prat_parser;
 import parser.prat_parser.lexer.Lexer;
 import parser.prat_parser.lexer.LexerFactory;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
+// exemplo de uso
+public class App {
 	public static void main(String[] args) {
-	    Lexer lexer = LexerFactory.createDefaultLexer("45]034+-*/.!:=?:");
-	    lexer.printTokens();
+		String input ="4+3*5 + 4/6 - (3+4)*7";
+		PrattParser parser = new PrattParser(LexerFactory.createDefaultLexer(input));
+		Expression parsed = parser.parse();
+		System.out.println("INPUT : " + input);
+		System.out.println("OUTPUT : " + parsed.toString());
 	}
 }
+
