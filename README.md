@@ -1,7 +1,3 @@
-Com base no código Java fornecido e na estrutura de diretórios que você compartilhou, aqui está um `README.md` profissional e didático para o projeto `prat-parser`, incorporando as boas práticas SOLID e a intenção de evoluir o parser para lidar com expressões mais complexas:
-
----
-
 # Pratt Parser em Java
 
 Este projeto implementa um **Pratt Parser** em Java, uma técnica de parsing eficiente para expressões matemáticas com suporte a precedência e associatividade de operadores. Inspirado pelo artigo [Simple but powerful Pratt parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html), este parser foi desenvolvido do zero utilizando uma arquitetura orientada a objetos com boas práticas de projeto.
