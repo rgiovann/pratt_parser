@@ -2,6 +2,7 @@ package parser.prat_parser;
 
 import parser.prat_parser.lexer.Lexer;
 import parser.prat_parser.lexer.LexerFactory;
+import parser.prat_parser.model.Expression;
 
 // exemplo de uso
 public class App {
