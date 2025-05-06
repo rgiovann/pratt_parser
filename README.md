@@ -1,6 +1,8 @@
 # Pratt Parser em Java
 
-Este projeto implementa um **Pratt Parser** em Java, uma técnica de parsing eficiente para expressões matemáticas com suporte a precedência e associatividade de operadores. Inspirado pelo artigo [Simple but powerful Pratt parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html), este parser foi desenvolvido do zero utilizando uma arquitetura orientada a objetos com boas práticas de projeto.
+Este projeto implementa um **Pratt Parser** em Java, uma técnica de parsing eficiente para expressões matemáticas com suporte a precedência e associatividade de operadores. Inspirado pelo artigo [Simple but powerful Pratt parsing](https://matklad.github.io/2020/04/13/simple-but-powerful-pratt-parsing.html), este parser foi desenvolvido do zero utilizando uma arquitetura orientada a objetos com boas práticas de projeto. A saide do parser segue a notação de Lisp-style S-expressions
+
+O repositório contem dois documentos pdf que explicam em detalhes o fluxo do código tanto do lexer quanto do parser.
 
 ## Estrutura de Diretórios
 
